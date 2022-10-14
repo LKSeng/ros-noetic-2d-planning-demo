@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Global param -->
+  <arg name="map_txt_directory" default="$(find ros_noetic_2d_planning_demo)/maps/map0.txt"/>
+  <arg name="show_rviz" default="true"/>
+
+  <!-- launch fiducial detect  -->
+  <node pkg="ros_noetic_2d_planning_demo" name="run_planner" type="run_planner" output="screen" args="$(arg map_txt_directory)" />
+
+  <!-- rviz viewer -->
+  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find ros_noetic_2d_planning_demo)/rviz/show_quad_tree.rviz" if="$(arg show_rviz)"/>
+</launch>
+
