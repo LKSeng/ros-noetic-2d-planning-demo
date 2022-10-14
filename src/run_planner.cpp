@@ -77,6 +77,7 @@ int main(int argc, char** argv){
     int totalDepth = 0;
     int maxDepth = 7;
     vector<visualization_msgs::Marker> line_list_list;
+    geometry_msgs::Point zero_point = geometry_msgs::Point();
     while (ros::ok())
     {
         env.ApproxCellDecomposite(totalDepth);
@@ -137,6 +138,10 @@ int main(int argc, char** argv){
         // Create the vertices for the points and lines
         QuadTreeToLines(line_strip, line_list_list, env.quadTree.root, totalDepth);
 
+        while (line_strip.points.size() < 2) {
+            // if 1, rviz complains (reasonably) about "At least two points are required for a LINE_STRIP marker."
+            line_strip.points.push_back(zero_point);
+        }
         marker_pub.publish(line_strip);
         for (uint i = 0; i < maxDepth; i++)
         {
