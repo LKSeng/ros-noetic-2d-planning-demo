@@ -1,5 +1,10 @@
+[![](https://github.com/LKSeng/ros_noetic_2d_planning_demo/workflows/noetic_build/badge.svg?branch=main)](https://github.com/LKSeng/ros_noetic_2d_planning_demo/actions)
+
 Author:
 Menglong Zhu, menglong AT cis upenn edu
+
+Updated by:
+LKSeng
 
 DESCRIPTION:
 Path planning package. Two approaches are implemented in this package
@@ -13,15 +18,16 @@ http://www.youtube.com/watch?v=jqjlsIAQDT0
 visualization use ROS markers in rviz
 
 COMPILATION:
-Cmake file is provided.
-$ cmake .
-$ make
-
-Only the visualization part depends on ROS rviz package. Other part of the code are stand alone. If you don't have ROS installed, simply comment out the visualization part of the code in run_planner.cpp.
+```shell
+catkin build ros_noetic_2d_planning_demo
+```
 
 HOW TO RUN:
-./run_planner <map path> 
-which generate intermidiate text file for output.
+```shell
+rosrun ros_noetic_2d_planning_demo run_planner ~/catkin_ws/src/ros_noetic_2d_planning_demo/maps/map0.txt
+```
+which generate intermediate text file for output.
 
 NOTE:
 This implementaion assume obstacles are all circles
+
