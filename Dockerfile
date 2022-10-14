@@ -1,7 +1,7 @@
 FROM ros:noetic
 
 # copy selected packages to desired directory in container
-COPY ros_noetic_2d_planning_demo /root/catkin_ws/src/ros_noetic_2d_planning_demo
+COPY . /root/catkin_ws/src/ros_noetic_2d_planning_demo
 
 SHELL ["bash", "-c"]
 
