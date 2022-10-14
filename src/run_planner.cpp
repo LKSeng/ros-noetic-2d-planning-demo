@@ -147,6 +147,12 @@ int main(int argc, char** argv){
         {
             // Line list is red
             cout << "publish level " << i << endl;
+            while (line_list_list[i].points.size() < 2) {
+                // if 0, rviz complains (reasonably) about "Points should not be empty for specified marker type."
+                // if 1, rviz complains (reasonably) about "Number of points should be a multiple of 2 for LINE_LIST marker."
+                // Not publishing if 0 does not work because the visualisation relies on every ns being published
+                line_list_list[i].points.push_back(zero_point);
+            }
             marker_pub1.publish(line_list_list[i]);
         }
 
