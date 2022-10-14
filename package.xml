@@ -49,6 +49,7 @@
   <!--   <doc_depend>doxygen</doc_depend> -->
   <buildtool_depend>catkin</buildtool_depend>
 
+  <depend>geometry_msgs</depend>
   <depend>roscpp</depend>
   <depend>visualization_msgs</depend>
 
