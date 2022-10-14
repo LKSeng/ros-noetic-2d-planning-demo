@@ -82,7 +82,7 @@ int main(int argc, char** argv){
         env.ApproxCellDecomposite(totalDepth);
 
         visualization_msgs::Marker line_strip;
-        line_strip.header.frame_id = "/my_frame";
+        line_strip.header.frame_id = "my_frame";
         line_strip.header.stamp = ros::Time::now();
         line_strip.ns = "points_and_lines";
         line_strip.action = visualization_msgs::Marker::ADD;
@@ -108,7 +108,7 @@ int main(int argc, char** argv){
         {
             // Line list is red
             visualization_msgs::Marker i_line_list;
-            i_line_list.header.frame_id = "/my_frame";
+            i_line_list.header.frame_id = "my_frame";
             i_line_list.header.stamp = ros::Time::now();
             i_line_list.ns = "points_and_lines" + i;
             i_line_list.action = visualization_msgs::Marker::ADD;
