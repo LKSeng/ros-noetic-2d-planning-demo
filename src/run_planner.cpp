@@ -110,7 +110,7 @@ int main(int argc, char** argv){
             visualization_msgs::Marker i_line_list;
             i_line_list.header.frame_id = "my_frame";
             i_line_list.header.stamp = ros::Time::now();
-            i_line_list.ns = "points_and_lines" + i;
+            i_line_list.ns = "points_and_lines" + to_string(i);
             i_line_list.action = visualization_msgs::Marker::ADD;
             i_line_list.pose.orientation.w = 1.0;
             i_line_list.id = 2;
